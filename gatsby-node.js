@@ -24,6 +24,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             edges {
               node {
                 frontmatter {
+                  aliasPath
                   path
                   title
                   desc
@@ -40,23 +41,35 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         }
 
         const feed = []
-        result.data.allMarkdownRemark.edges.forEach(({ node }, i) => {
-          if (i < config.journal.feed_size) feed.push(node.frontmatter)
-
-          console.log("create page", node.frontmatter.path)
+        result.data.allMarkdownRemark.edges.forEach((edge, i) => {
+          if (i < config.journal.feed_size) feed.push(edge.node.frontmatter)
 
           createPage({
-            path: node.frontmatter.path,
+            path: edge.node.frontmatter.path,
             component: blogPost,
-            context: {}
+            context: {
+              path: edge.node.frontmatter.path
+            }
           })
+
+          if (edge.node.frontmatter.aliasPath) {
+            createPage({
+              path: edge.node.frontmatter.aliasPath,
+              component: blogPost,
+              context: {
+                path: edge.node.frontmatter.path
+              }
+            })
+          }
         })
 
         photos.forEach(photo => {
           createPage({
             path: photo.path,
             component: photoComp,
-            context: {}
+            context: {
+              path: photo.path
+            }
           })
         })
 

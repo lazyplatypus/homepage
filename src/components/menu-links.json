@@ -2,6 +2,5 @@
   { "to": "/journal", "title": "Journal" },
   { "to": "/software", "title": "Software" },
   { "to": "/photography", "title": "Photography" },
-  { "to": "https://github.com/azer/notebook", "title": "Notebook" },
-  { "to": "/patrons", "title": "Patrons", "onlymobile": true }
+  { "to": "https://github.com/azer/notebook", "title": "Notebook" }
 ]
