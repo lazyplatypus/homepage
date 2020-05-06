@@ -1,7 +1,8 @@
 ---
 title: "Decentralized Tipping for Websites"
-desc: "A proposal for building a tipping system owned by nobody"
-image:
+desc: "Proposal for a tipping system owned by nobody"
+image: https://cldup.com/FG7_GZmjFu.png
+hideImage: true
 date: "2019-11-05T23:00:00.000Z"
 path: "/journal/decentralized-tipping-for-websites"
 ---
@@ -28,19 +29,33 @@ If you're a website owner, all you need is to define how you need to get paid vi
 <meta name="wallet:image" content="https://cldup.com/A-XFtZUANM.jpg"/>
 ```
 
-That's all. It's probably a good idea to create a separate wallet for each project, so you won't leak your personal wallet addresses to public.
+That's all. It's probably a good idea to create a separate wallet for each project, to not publicize your personal wallet address. (Note that it could still be possible to track and find related wallets as transactions are public)
 
 ## How to send tips ?
 
-That's totally up to what we make possible. We can build bookmarking sites, RSS readers, search engines, web browsers based on tipping.
-
-To start small, I built a Chrome extension. I submitted it to Google Chrome store, it's under review. Until that, you can install the extension from the repo and try it out;
-
-Github: [github.com/azer/ethereum-tipping-wallet](https://github.com/azer/ethereum-tipping-wallet)
-
-Screenshot:
+I built a Chrome Extension that lets you create or access an Ethereum wallet where you can store money just for tipping, and tip websites directly from your website with a few clicks. Here is the screenshot;
 
 ![](https://cldup.com/6NvYSop4Ut.png)
+
+## Install
+
+Unfortunately, Chrome Webstore did not approve this extension, so installing it will take a few more steps.
+
+Please note that it's experimental software, it hasn't been reviewed or audited, and you'll be on your own risk while using it.
+
+* Download [latest release](https://github.com/azer/ethereum-tipping-wallet/releases/download/1.0/ethereum-tipping-wallet-v1.0.zip)
+* Unpack the zip file
+* Open "Extensions" in Chrome
+* Hit "Load unpacked" in left top
+* Point to the folder you've unpacked the file to.
+* You should see a tipping icon in the browser menu.
+* Click the tipping icon, create or restore your wallet
+* Open this page, refresh
+* Click the same icon again, you should see the tipping menu!
+
+## Source Code
+
+The source code is available at; [github.com/azer/ethereum-tipping-wallet](https://github.com/azer/ethereum-tipping-wallet)
 
 Got some questions ? Check out the Q&A below, [drop me an e-mail](mailto:azer@roadbeats.com) if you still got any.
 
@@ -65,3 +80,7 @@ It connects to Ethereum via hard-coded Infura node. So, it's not truly decentral
 ### Will you maintain it ?
 
 If it gets enough support, yes. If it doesn't, probably not.
+
+### How are you going to make money?
+
+If it's useful, you'll probably tip this page first. If it's not useful, then I won't make any money and move on to another project.
